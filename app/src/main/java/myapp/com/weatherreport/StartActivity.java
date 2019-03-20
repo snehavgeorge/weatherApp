@@ -29,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class StartActivity extends AppCompatActivity implements MainInterface{
     TextView weather;
     public static Retrofit retrofit;
-    public Presenter presenter;
+    public PresenterInterface presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

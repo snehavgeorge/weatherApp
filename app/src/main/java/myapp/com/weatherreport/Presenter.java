@@ -24,8 +24,6 @@ public class Presenter implements PresenterInterface {
 
     }
 
-
-
     public Observable<WeatherResponse> getObservable() {
         return RetrofitManager.getRetrofit().create(ApiInterface.class)
                 .getweatherData()
@@ -43,14 +41,12 @@ public class Presenter implements PresenterInterface {
 
                 @Override
                 public void onError(@NonNull Throwable e) {
-//                    Log.d(TAG,"Error"+e);
-//                    e.printStackTrace();
-//                    mvi.displayError("Error fetching Movie Data");
+
                 }
 
                 @Override
                 public void onComplete() {
-                 //   Log.d(TAG,"Completed");
+
                 }
             };
         }
