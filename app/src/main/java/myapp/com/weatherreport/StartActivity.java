@@ -26,7 +26,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class StartActivity extends AppCompatActivity implements MainInterface.StartView {
+public class StartActivity extends AppCompatActivity implements MainInterface{
     TextView weather;
     public static Retrofit retrofit;
     public Presenter presenter;
@@ -74,18 +74,12 @@ public class StartActivity extends AppCompatActivity implements MainInterface.St
 
     }
     @Override
-    public void handleResults(WeatherResponse weatherResponse) {
+    public void setText(WeatherResponse weatherResponse) {
         {
             weather.setText("City Name : "+weatherResponse.getCity().getName()+"\n"+"Temperature in morning : "+weatherResponse.getList().get(0).getTemp().getMorn()+"\n"+"Temperature in day time : "+weatherResponse.getList().get(0).getTemp().getEve()+"\n"+"Temperature in evening : "+weatherResponse.getList().get(0).getTemp().getEve()+"\n"+"Temperature in Night : "+weatherResponse.getList().get(0).getTemp().getNight()+"\n");
 
         }
     }
 
-    @Override
-    public void handleError(Throwable t){
-        Log.e("Observer", ""+ t.toString());
-        Toast.makeText(this, "ERROR IN GETTING COUPONS",
-                Toast.LENGTH_LONG).show();
-    }
 
 }
